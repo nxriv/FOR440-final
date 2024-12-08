@@ -5,7 +5,7 @@ import java.util.*;
                                                                                                                                                                                                                                             
 public class Log4ShellHunter {                                                                                                                                                                                                              
     public static void main(String[] args) {                                                                                                                                                                                                
-        String logFile = "/home/user1/log4jhunt/http.log";                                                                                                                                                                                  
+        String logFile = "/home/user1/log4jhunt/http.log"; // ADJUST TO YOUR PATH!!!                                                                                                                                                                                 
                                                                                                                                                                                                                                             
         // exploitable patterns of interest                                                                                                                                                                                                 
         List<String> patterns = Arrays.asList("jndi:", "ldap:");                                                                                                                                                                            
@@ -21,7 +21,7 @@ public class Log4ShellHunter {
                 // skip metadata                                                                                                                                                                                                            
                 if (line.startsWith("#")) {                                                                                                                                                                                                 
                     if (line.startsWith("#fields")) {                                                                                                                                                                                       
-                        headers = Arrays.asList(line.substring(8).split("\t")); // Capture header names                                                                                                                                     
+                        headers = Arrays.asList(line.substring(8).split("\t"));
                     }                                                                                                                                                                                                                       
                     continue;
                 }
